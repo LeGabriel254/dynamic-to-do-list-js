@@ -26,7 +26,7 @@ const addButton = document.getElementById('add-task-btn');
                 taskList.removeChild(li);
             };
             li.appendChild(removeButton);
-            taskList.add(li);
+            classList.add(li);
             taskInput.value = "";
         }
 
