@@ -28,7 +28,7 @@ const addTask= ["taskInput.value.trim()"]
         classList.removeChild(li);
     };
     li.appendChild(removeButton);
-    classList.appendChild(li);
+    classList.add(li);g
     taskInput.value = "";
 
 }
