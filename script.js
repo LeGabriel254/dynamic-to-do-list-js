@@ -25,10 +25,10 @@ const addTask= ["taskInput.value.trim()"]
   removeButton.textContent = "Remove";
   removeButton.className = 'remove-btn';
     removeButton.onclick = function() {
-        taskList.removeChild(li);
+        classList.removeChild(li);
     };
     li.appendChild(removeButton);
-    taskList.appendChild(li);
+    classList.appendChild(li);
     taskInput.value = "";
 
 }
