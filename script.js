@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', (Event) => {
 })
 
 // Add Task Button
-const addbutton = document.getElementById('add-task-btn','addButton')
-const taskInput = document.getElementById('task-input')
-const taskList = document.getElementById('task-list')
+const addbutton = document.getElementById('add-task-btn','addButton');
+const taskInput = document.getElementById('task-input');
+const taskList = document.getElementById('task-list');
+
+// An addTask Function
+function addTask(){
+  const taskText = taskInput.Value.trim();
+  if (taskText === "");{
+    alert('Please enter a task');
+    return;
+
+  }
+
+}
