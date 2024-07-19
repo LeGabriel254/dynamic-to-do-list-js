@@ -15,7 +15,7 @@ const taskList = document.getElementById('task-list');
 
 // An addTask Function
 function addTask(){
-const addTask= taskInput.Value.trim();
+const addTask= ["taskInput.value.trim()"]
   if (taskText === "");{
     alert('Please enter a task');
     return;
