@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function loadTask() {
   let task = JSON.parse(localStorage('task')) ||  [];
-  tasks.forEach(task => addTaskToDOM(task));
+  task.forEach(task => addTaskToDOM(task));
   // My code
   const form = document.getElementById("To-Do List Appplication");
   const addButton = document.getElementById("add-task-btn");
