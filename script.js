@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function loadTasks() {
-  let task = JSON.parse(localStorage('task')) ||  [];
-  task.forEach(task => addTaskToDOM(task));
+  let tasks = JSON.parse(localStorage.getItem('tasks')) ||  [];
+  tasks.forEach(task => addTaskToDOM(task));
   // My code
   const form = document.getElementById("To-Do List Appplication");
   const addButton = document.getElementById("add-task-btn");
@@ -46,9 +46,14 @@ document.addEventListener("DOMContentLoaded", function loadTasks() {
   });
 
   // Task Addition functionality
-  function addTask(task){
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+  function addTask(task, save = true){
+    localStorage.setItem('tasks', JSON.stringify(storedTasks));
     addTaskToDOM(task);
+
+    if (save) {
+      const storedTasks = (localStorage.getItem ('tasks' || '[]'));
+      storedTasks.push(taskText);
+    }
   }
 
 });
