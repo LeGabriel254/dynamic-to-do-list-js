@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function loadTasks() {
       taskList.removeChild(li);
     };
     li.appendChild(removeButton);
-    taskList.appendChild(li); // Correct way to add the task to the list
+    taskList.appendChild(li); 
     taskInput.value = "";
   }
 
