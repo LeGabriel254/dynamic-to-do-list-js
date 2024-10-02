@@ -1,7 +1,8 @@
-document.addEventListener("DOMContentLoaded", function loadTasks() {
+// To ensure my Js code runs after the HTML has fullyLoaded
+  document.addEventListener("DOMContentLoaded", function loadTasks() {
   let tasks = JSON.parse(localStorage.getItem('tasks')) ||  [];
   tasks.forEach(task => addTaskToDOM(task));
-  // My code
+  // DOM  elements
   const form = document.getElementById("To-Do List Appplication");
   const addButton = document.getElementById("add-task-btn");
   const taskInput = document.getElementById("task-input");
@@ -12,13 +13,15 @@ document.addEventListener("DOMContentLoaded", function loadTasks() {
     addTask();
   });
 
-  // AddTask creation function
+  // Function for adding New tasks to the list
   function addTask() {
     const taskText = taskInput.value.trim();
-    if (taskText === "") {
+    if(taskText !== "") {
       alert("Please enter a task.");
-      return;
+      return taskText;
     }
+
+    //Task craction and removal
     const li = document.createElement("li");
     li.textContent = taskText;
     const removeButton = document.createElement("button");
@@ -33,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function loadTasks() {
   }
 
   // this will disable reload on click
-  addButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    addTask();
-  });
+  addButton.addEventListener("click", addTask)
+    // e.preventDefault();
+    
+  
 
   taskInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
